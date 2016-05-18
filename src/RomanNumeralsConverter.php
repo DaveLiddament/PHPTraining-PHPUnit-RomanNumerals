@@ -26,6 +26,11 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
+        if (!is_numeric($number)) {
+            throw new \InvalidArgumentException("Invalid input value [$number]");
+        }
+
+
         $result = '';
 
         foreach(self::$MAPPINGS as $romanNumeral => $value) {
