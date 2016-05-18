@@ -10,18 +10,21 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
 
     public function test1()
     {
-        $converter = new RomanNumeralsConverter();
-        $actualValue = $converter->convert(1);
-        $this->assertEquals('I', $actualValue);
+        $this->assertConversion('I', 1);
     }
 
 
     public function test2()
     {
-        $converter = new RomanNumeralsConverter();
-        $actualValue = $converter->convert(2);
-        $this->assertEquals('II', $actualValue);
+        $this->assertConversion('II', 2);
     }
 
+
+    private function assertConversion($expectedValue, $inputValue)
+    {
+        $converter = new RomanNumeralsConverter();
+        $actualValue = $converter->convert($inputValue);
+        $this->assertEquals($expectedValue, $actualValue);
+    }
 
 }
