@@ -26,20 +26,11 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        if (!is_numeric($number)) {
+        if (!is_numeric($number) || ((int) $number != $number) || ($number <= 0)) {
             throw new \InvalidArgumentException("Invalid input value [$number]");
         }
 
-        if ((int) $number != $number) {
-            throw new \InvalidArgumentException("Invalid input value [$number]");
-        }
-
-        if ($number <= 0) {
-            throw new \InvalidArgumentException("Invalid input value [$number]");
-        }
-
-
-
+        
         $result = '';
 
         foreach(self::$MAPPINGS as $romanNumeral => $value) {
@@ -56,5 +47,4 @@ class RomanNumeralsConverter
 
         return $result . str_repeat('I', $number);
     }
-
 }
