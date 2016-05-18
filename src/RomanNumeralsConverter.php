@@ -16,7 +16,9 @@ class RomanNumeralsConverter
 
 
     /**
-     * Returns the RomanNumeral equivalent of $number
+     * Returns the RomanNumeral equivalent of $number.
+     *
+     * If $number is not an integer 1 or higher then an exception is thrown.
      *
      * @param int $number
      * @return string
