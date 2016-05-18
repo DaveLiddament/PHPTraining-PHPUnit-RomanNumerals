@@ -50,6 +50,8 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
         return [
             ['foo'],
             [3.4],
+            [0],
+            [-1],
         ];
     }
 
