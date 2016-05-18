@@ -17,6 +17,10 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
+        if ($number == 9) {
+            return 'IX';
+        }
+
         if ($number == 4) {
             return 'IV';
         }
