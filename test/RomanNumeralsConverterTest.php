@@ -53,4 +53,13 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
         $this->converter->convert('foo');
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testNumericButNotIntegerInput()
+    {
+        $this->converter->convert(3.4);
+    }
+
+
 }
