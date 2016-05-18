@@ -34,6 +34,11 @@ class RomanNumeralsConverter
             throw new \InvalidArgumentException("Invalid input value [$number]");
         }
 
+        if ($number <= 0) {
+            throw new \InvalidArgumentException("Invalid input value [$number]");
+        }
+
+
 
         $result = '';
 
