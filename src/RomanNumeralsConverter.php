@@ -9,6 +9,12 @@ namespace Training\PHPUnit\RomanNumerals;
 class RomanNumeralsConverter
 {
 
+    private static $MAPPINGS = [
+        'X' => 10,
+        'V' => 5,
+    ];
+
+
     /**
      * Returns the RomanNumeral equivalent of $number
      *
@@ -27,17 +33,13 @@ class RomanNumeralsConverter
 
         $result = '';
 
-        if ($number >= 10) {
-            $result = 'X';
-            $number -= 10;
+        foreach(self::$MAPPINGS as $romanNumeral => $value) {
+            if ($number >= $value) {
+                $result .= $romanNumeral;
+                $number -= $value;
+            }
         }
-
-
-        if ($number >= 5) {
-            $result = 'V';
-            $number -= 5;
-        }
-
+        
         return $result . str_repeat('I', $number);
     }
 
