@@ -37,17 +37,12 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     *
+     * @expectedException \InvalidArgumentException
      */
     public function testNonNumericInput()
     {
-        try {
-            $converter = new RomanNumeralsConverter();
-            $converter->convert('foo');
-            $this->fail("Expected an exception to be thrown");
-        } catch (\InvalidArgumentException $e) {
-            // Expected path
-        }
+        $converter = new RomanNumeralsConverter();
+        $converter->convert('foo');
     }
 
 }
