@@ -7,6 +7,16 @@ use Training\PHPUnit\RomanNumerals\RomanNumeralsConverter;
 
 class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var RomanNumeralsConverter
+     */
+    private $converter;
+
+    protected function setUp()
+    {
+        $this->converter = new RomanNumeralsConverter();
+    }
+
 
     public function happyPathDataProvider()
     {
@@ -30,8 +40,7 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
      */
     public function testConversion($expectedValue, $inputValue)
     {
-        $converter = new RomanNumeralsConverter();
-        $actualValue = $converter->convert($inputValue);
+        $actualValue = $this->converter->convert($inputValue);
         $this->assertEquals($expectedValue, $actualValue);
     }
 
@@ -41,8 +50,7 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
      */
     public function testNonNumericInput()
     {
-        $converter = new RomanNumeralsConverter();
-        $converter->convert('foo');
+        $this->converter->convert('foo');
     }
 
 }
