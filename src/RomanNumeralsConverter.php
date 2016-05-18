@@ -30,6 +30,10 @@ class RomanNumeralsConverter
             throw new \InvalidArgumentException("Invalid input value [$number]");
         }
 
+        if ((int) $number != $number) {
+            throw new \InvalidArgumentException("Invalid input value [$number]");
+        }
+
 
         $result = '';
 
