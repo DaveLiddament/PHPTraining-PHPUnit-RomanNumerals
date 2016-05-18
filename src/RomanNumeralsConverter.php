@@ -17,7 +17,11 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        return ($number == 1) ? 'I' : 'II';
+        $result = '';
+        for($i=0; $i<$number; $i++) {
+            $result .= 'I';
+        }
+        return $result;
     }
 
 }
