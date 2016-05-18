@@ -7,7 +7,7 @@ use Training\PHPUnit\RomanNumerals\RomanNumeralsConverter;
 
 class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
 {
-    
+
     public function happyPathDataProvider()
     {
         return [
@@ -16,6 +16,7 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
             ['III', 3],
             ['IV', 4],
             ['V', 5],
+            ['VI', 6],
         ];
     }
 
