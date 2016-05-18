@@ -17,10 +17,6 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        if ($number == 10) {
-            return 'X';
-        }
-
         if ($number == 9) {
             return 'IX';
         }
@@ -30,6 +26,13 @@ class RomanNumeralsConverter
         }
 
         $result = '';
+
+        if ($number >= 10) {
+            $result = 'X';
+            $number -= 10;
+        }
+
+
         if ($number >= 5) {
             $result = 'V';
             $number -= 5;
