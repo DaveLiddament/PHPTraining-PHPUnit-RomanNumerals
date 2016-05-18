@@ -23,14 +23,6 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        if ($number == 9) {
-            return 'IX';
-        }
-
-        if ($number == 4) {
-            return 'IV';
-        }
-
         $result = '';
 
         foreach(self::$MAPPINGS as $romanNumeral => $value) {
@@ -38,8 +30,13 @@ class RomanNumeralsConverter
                 $result .= $romanNumeral;
                 $number -= $value;
             }
+
+            if ($number == $value - 1) {
+                $result .= 'I' . $romanNumeral;
+                $number -= ($value - 1);
+            }
         }
-        
+
         return $result . str_repeat('I', $number);
     }
 
