@@ -17,6 +17,9 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
+        if ($number == 5) {
+            return 'V';
+        }
         if ($number == 4) {
             return 'IV';
         }
