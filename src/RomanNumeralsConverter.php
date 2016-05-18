@@ -20,6 +20,7 @@ class RomanNumeralsConverter
      *
      * @param int $number
      * @return string
+     * @throws \InvalidArgumentException
      */
     public function convert($number)
     {
