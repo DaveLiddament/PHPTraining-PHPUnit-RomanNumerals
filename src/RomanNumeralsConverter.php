@@ -17,7 +17,7 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        return 'I';
+        return ($number == 1) ? 'I' : 'II';
     }
 
 }
