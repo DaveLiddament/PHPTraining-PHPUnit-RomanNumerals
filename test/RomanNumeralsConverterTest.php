@@ -7,34 +7,23 @@ use Training\PHPUnit\RomanNumerals\RomanNumeralsConverter;
 
 class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
 {
-
-    public function test1()
+    
+    public function happyPathDataProvider()
     {
-        $this->assertConversion('I', 1);
+        return [
+            ['I', 1],
+            ['II', 2],
+            ['III', 3],
+            ['IV', 4],
+            ['V', 5],
+        ];
     }
 
 
-    public function test2()
-    {
-        $this->assertConversion('II', 2);
-    }
-
-    public function test3()
-    {
-        $this->assertConversion('III', 3);
-    }
-
-    public function test4()
-    {
-        $this->assertConversion('IV', 4);
-    }
-
-    public function test5()
-    {
-        $this->assertConversion('V', 5);
-    }
-
-    private function assertConversion($expectedValue, $inputValue)
+    /**
+     * @dataProvider happyPathDataProvider
+     */
+    public function testConversion($expectedValue, $inputValue)
     {
         $converter = new RomanNumeralsConverter();
         $actualValue = $converter->convert($inputValue);
