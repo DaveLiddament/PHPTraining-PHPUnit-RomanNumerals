@@ -29,6 +29,11 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertConversion('IV', 4);
     }
 
+    public function test5()
+    {
+        $this->assertConversion('V', 5);
+    }
+
     private function assertConversion($expectedValue, $inputValue)
     {
         $converter = new RomanNumeralsConverter();
