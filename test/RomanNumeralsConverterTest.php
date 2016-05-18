@@ -19,6 +19,7 @@ class RomanNumeralsConverterTest extends \PHPUnit_Framework_TestCase
             ['VI', 6],
             ['VII', 7],
             ['IX', 9],
+            ['X', 10],
         ];
     }
 
