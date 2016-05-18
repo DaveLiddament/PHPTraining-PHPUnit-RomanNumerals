@@ -17,16 +17,17 @@ class RomanNumeralsConverter
      */
     public function convert($number)
     {
-        if ($number == 6) {
-            return 'VI';
-        }
-        if ($number == 5) {
-            return 'V';
-        }
         if ($number == 4) {
             return 'IV';
         }
-        return str_repeat('I', $number);
+
+        $result = '';
+        if ($number >= 5) {
+            $result = 'V';
+            $number -= 5;
+        }
+
+        return $result . str_repeat('I', $number);
     }
 
 }
